@@ -4,7 +4,9 @@ using System.Text;
 
 namespace NovaCleanClient.Models
 {
-    class City
+    public class City:dbItemBase
     {
+        public string name;
+        public string Province;
     }
 }

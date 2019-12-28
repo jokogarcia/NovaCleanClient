@@ -4,7 +4,11 @@ using System.Text;
 
 namespace NovaCleanClient.Models
 {
-    class Sector
+    public class Sector:dbItemBase
     {
+        public String name {get;set;}
+        public String photo_url {get;set;}
+        public String description {get;set;}
+        public List<CleaningTask> cleaningTasks {get;set;}
     }
 }
