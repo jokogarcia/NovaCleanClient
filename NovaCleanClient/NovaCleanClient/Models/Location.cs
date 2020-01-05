@@ -19,10 +19,12 @@ namespace NovaCleanClient.Models
         public double latitude {get;set;}
         public double longitude {get;set;}
         public String contract_number {get;set;}
-        public User Supervisor {get;set;}
+        public User supervisor {get;set;}
 
         public List<VisitEvent> visitEvents {get;set;}
         public List<Sector> sectors {get;set;}
+
+        public int supervisor_id;
 
     }
 }

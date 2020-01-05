@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="NovaCleanClient.Views.LoginPage">
+    <StackLayout>
+        <Entry Text="{Binding Email}"
+               Keyboard="Email"/>
+        <Entry Text="{Binding Password}"
+               IsPassword="True"
+               />
+        <Label Text="{Binding Message}"></Label>
+        <Button Text="Entrar"
+                Command="{Binding LoginCommand}"/>
+    </StackLayout>
+</ContentPage>

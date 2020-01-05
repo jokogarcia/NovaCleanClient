@@ -4,6 +4,7 @@ using NovaCleanClient.ViewModels;
 using NovaCleanClient.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using NovaCleanClient.Services.BackendServices;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace NovaCleanClient
@@ -23,14 +24,24 @@ namespace NovaCleanClient
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/DaysEvents");
+            await NavigationService.NavigateAsync("/LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<DaysEvents, DaysEventsViewModel>();
+
+            containerRegistry.RegisterForNavigation<DaysVisitPage, DaysVisitPageViewModel>();
+            containerRegistry.RegisterForNavigation<CalendarPage, CalendarPageViewModel>();
+            containerRegistry.RegisterForNavigation<NonConformityReportPage, NonConformityReportPageViewModel>();
+            containerRegistry.RegisterForNavigation<EvaluationPage, EvaluationPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserProfilePage, UserProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<NovaMasterDetailPage1, NovaMasterDetailPage1ViewModel>();
+
+            containerRegistry.RegisterSingleton<IUserCredentialsProvider, UserCredentialsProvider>();
+            containerRegistry.Register<ILoginService, LoginService>();
+            containerRegistry.Register<IEventsService, EventsService>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
     }
 }

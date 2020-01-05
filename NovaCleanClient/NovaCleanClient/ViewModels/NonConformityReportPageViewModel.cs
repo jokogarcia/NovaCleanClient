@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace NovaCleanClient.ViewModels
 {
-    public class DaysEventsViewModel : BindableBase
+    public class NonConformityReportPageViewModel : BindableBase
     {
-        public DaysEventsViewModel()
+        public NonConformityReportPageViewModel()
         {
 
         }

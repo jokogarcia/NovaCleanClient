@@ -7,6 +7,7 @@ namespace NovaCleanClient.Models
     public class City:dbItemBase
     {
         public string name;
-        public string Province;
+        public Province province;
+        public int province_id;
     }
 }

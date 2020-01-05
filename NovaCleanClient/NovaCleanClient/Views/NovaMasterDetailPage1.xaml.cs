@@ -2,9 +2,9 @@
 
 namespace NovaCleanClient.Views
 {
-    public partial class DaysEvents : ContentPage
+    public partial class NovaMasterDetailPage1 : MasterDetailPage
     {
-        public DaysEvents()
+        public NovaMasterDetailPage1()
         {
             InitializeComponent();
         }

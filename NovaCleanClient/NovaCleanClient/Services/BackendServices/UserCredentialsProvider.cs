@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
+using NovaCleanClient.Models;
 
 namespace NovaCleanClient.Services.BackendServices
 {
-    public interface ILoginService
+    class UserCredentialsProvider : IUserCredentialsProvider
     {
-        Task<bool> LogIn(string email, string password);
+        public User CurrentUser { get; set; }
     }
 }

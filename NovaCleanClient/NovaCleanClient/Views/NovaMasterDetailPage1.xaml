@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="NovaCleanClient.Views.NovaMasterDetailPage1">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Padding="20">
+                <!-- TODO: // Update the Layout and add some real menu items  -->
+                <Button Text="Eventos de hoy" Command="{Binding NavigateCommand}" CommandParameter="DaysVisitPage" />
+                <Button Text="Calendario" Command="{Binding NavigateCommand}" CommandParameter="CalendarPage" />
+                <Button Text="Mi Cuenta" Command="{Binding NavigateCommand}" CommandParameter="UserProfilePage" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>

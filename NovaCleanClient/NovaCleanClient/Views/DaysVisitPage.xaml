@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="Red"
+             x:Class="NovaCleanClient.Views.DaysVisitPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Label HorizontalOptions="Center"
+               Grid.Row="0"
+               Text="Eventos del día"></Label>
+        <Label HorizontalOptions="Center"
+               Grid.Row="1"
+               Text="{Binding CurrentDateTime, StringFormat='dd-MMM-yyyy'}"/>
+        <ListView
+            Grid.Row="2"
+            ItemsSource="{Binding TodaysEventsList}"
+            SelectedItem="{Binding SelectedEventItem, Mode=TwoWay}"
+            IsGroupingEnabled="True"
+            VerticalOptions="StartAndExpand">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding locationName,StringFormat='Lugar: {0}'}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding DisplayDate}" Grid.Column="0" HorizontalTextAlignment="Start"/>
+                            <Label Text="{Binding duration,StringFormat='hh\:mm\:ss'}" Grid.Column="1" HorizontalTextAlignment="End"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+  
+</ContentPage>
